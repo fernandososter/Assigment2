@@ -1,8 +1,10 @@
+ 
 
-## The 2 function above aim to generate and keep an inverse matrix 
-## in memory. 
+## To use this code you have to create a matrix variable and pass it as parameter
+## on makeCacheMatrix(). Then call cacheSolve().
 
-## MakeCacheMatrix creates an 
+## mat <- makeCacheMatrix(matrix(sample(1:4),2,2))
+## cacheSolve(mat)
 
 ## It doesn't matter whether the input matrix is inversed or not, 
 ## cacheSolve() will invert the matrix content, this way it will 
@@ -44,15 +46,15 @@ makeCacheMatrix <- function(mat = matrix()) {
 }
 
 
-## Write a short comment describing this function
-
+## This method calculates the inverse matrix and add it to the cache. 
+## The return is inverse matrix recently generated or the cached content.
 cacheSolve <- function(x, ...) {
   
   
   ## Getting the inverted matrix. 
   matInverse <- x$getInverse()
   
-  ## If the matrix wasn't returned (matInverse is NULL) so there isn't
+  ## If the matrix wasn't returned i(matInverse is NULL) so there isn't
   ## any cache and it must be generated. Otherwise, if it's not NULL, 
   ## so the message will be printed and cache could be returned  
   
